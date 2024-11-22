@@ -1,14 +1,8 @@
-#play{
-    border: none;
-    background-color: transparent;
-    font-weight: bolder;
-    font-size: medium;
-    font-display:inherit;
-    transition: color 2s ease-in-out;
-    transition: background-color  3s ease-out;
-    border-radius: 15px;
-}
-#play:hover{
-    background-color: black;
+#playButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
