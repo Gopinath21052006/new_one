@@ -2,7 +2,8 @@ const playButton = document.getElementById('playButton');
 const audio = document.getElementById('myAudio');
 const stopButton =document .getElementById('stopButton');
 const rewindButton=document.getElementById('rewindButton');
-const _2xButton =document.getElementById("2xButton")
+const _2xButton =document.getElementById("2xButton");
+const normulButton=document.getElementById("normalButton");
 playButton.addEventListener('click', () => {
     audio.play(); 
 });
@@ -15,4 +16,7 @@ rewindButton.addEventListener('click',()=>{
 _2xButton.addEventListener('click', ()=>{
     audio.playbackRate = 2;
 })
+normulButton.addEventListener('click' , ()=>{
+audio.playbackRate=0;
+});
 
