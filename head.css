@@ -33,9 +33,21 @@ body{
     
 }
 p{
+    position: absolute;
+    top: 33%;
+    left: 44%;
     border: #4CAF50;
-    padding: 30px;
     color: rebeccapurple;
-    background-color: blue;
-    display: block;
+    background-color: rgb(3, 28, 112);
+    border-radius: 50%;
+    padding: 40px;
+    width: 10px;
+    height: 10px;
+}
+#p2{
+    padding: 60px;
+    top: 203px;
+    left: 296px;
+    background-color: transparent;
+    border: 20px solid rgb(3, 28, 112);
 }
