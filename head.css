@@ -1,14 +1,9 @@
-.Button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 body{
-    background-color: rgb(12, 14, 58);
+    background-image: linear-gradient( rgb(71, 27, 27) , black);
+    background-repeat:no-repeat ;
+    width: 100vw;
+    height: 100vh;
 }
 #header{
     display: flex;
@@ -16,38 +11,100 @@ body{
     margin: 20px;
     padding: 10px;
 }
+.Button{
+    background-color: transparent;
+    outline: none;
+    border: transparent;
+    margin: 50px;
+}
 #headButton{
+    margin: 4px 5px;
     width: 50px;
     height: 50px;
     border-radius:50% ;
+    background-color: transparent;
     border: transparent ;
+    filter: invert(0);
+    transition: all 0.5s;
+    box-shadow:0px 0px 0px black;
 
+}
+#headButton:hover{
+    background-color: rgb(61, 51, 51);
+    filter: invert(1);
+    box-shadow: 0px 0px 5px black;
 }
 #center_image{
     clip-path: circle(40%);
-    margin-top: 100px;
-    width: 55%;
-    height: 55%;
-    display: flex;
-    justify-self:center;
+    width: 500px;
+    animation: rotate 10s infinite linear;
+    border: transparent;
     
+
+}
+@keyframes rotate {
+    from { transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 p{
     position: absolute;
-    top: 33%;
-    left: 44%;
+    top:   5rem;
+    left: 13.7rem;
     border: #4CAF50;
     color: rebeccapurple;
-    background-color: rgb(3, 28, 112);
+    background-color: rgb(71, 27, 27) ;
     border-radius: 50%;
     padding: 40px;
     width: 10px;
     height: 10px;
+    
 }
 #p2{
+    position: absolute;
     padding: 60px;
-    top: 203px;
-    left: 296px;
+    top: 2em;
+    left: 10.6em;
     background-color: transparent;
-    border: 20px solid rgb(3, 28, 112);
+    border: 30px solid rgb(71, 27, 27);
+
+}
+#body{
+    position:relative;
+    display: flex;
+    margin: 30px;
+    padding: 10px;
+    border: 2px solid transparent;
+    justify-self: center;
+}
+#contolbox{
+    -webkit-appearance: none;
+    width: 90%;
+    display: block;
+    justify-self: center;
+    height: 6px;
+    background-color: aliceblue;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1px;
+
+}
+#contolbox::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color:rgb(71, 27, 27);
+    width: 25px;
+    height: 25px;
+    border-radius:50% ;
+    transition:all 0.5s ease-in-out;
+
+}
+#contolbox::-webkit-slider-thumb:hover{
+    width: 30px;
+    height: 30px;
+}
+#foor{
+
+    display: block;
+    column-gap: 10px;
+    justify-self:center;
+    
 }
