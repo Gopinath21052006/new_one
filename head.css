@@ -16,6 +16,15 @@ body{
     outline: none;
     border: transparent;
     margin: 50px;
+    background-color: transparent;
+    border: transparent ;
+    filter: invert(0);
+    width: 50px;
+    height: 50px;
+    border-radius:50% ;
+    transition: all 0.5s;
+    box-shadow:0px 0px 0px black;
+    cursor: pointer;
 }
 #headButton{
     margin: 4px 5px;
@@ -27,6 +36,8 @@ body{
     filter: invert(0);
     transition: all 0.5s;
     box-shadow:0px 0px 0px black;
+    cursor: pointer;
+
 
 }
 #headButton:hover{
@@ -65,8 +76,13 @@ p{
     top: 2em;
     left: 10.6em;
     background-color: transparent;
-    border: 30px solid rgb(71, 27, 27);
+    border: 30px dotted rgb(166, 121, 121);
+    animation: rerotate  10s infinite ease-in-out;
 
+}
+@keyframes rerotate {
+    from { transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
 }
 #body{
     position:relative;
@@ -90,21 +106,38 @@ p{
 }
 #contolbox::-webkit-slider-thumb{
     -webkit-appearance: none;
+    position: relative;
     background-color:rgb(71, 27, 27);
     width: 25px;
     height: 25px;
     border-radius:50% ;
-    transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-out;
+
+    border: transparent;
+    transform: rotate(10deg);
+    outline: 5px dotted rgb(225, 195, 195);
 
 }
 #contolbox::-webkit-slider-thumb:hover{
     width: 30px;
     height: 30px;
+    background-color: transparent;
+    border: 5px dotted rgb(71, 27, 27) ;
+    transform: rotate(360deg);
+    outline: transparent;
+
+
 }
+
 #foor{
 
     display: block;
     column-gap: 10px;
     justify-self:center;
     
+}
+.Button:hover{
+    background-color: rgb(61, 51, 51);
+    filter: invert(1);
+    box-shadow: 0px 0px 5px black;
 }
