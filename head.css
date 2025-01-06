@@ -50,6 +50,7 @@ body{
     width: 500px;
     animation: rotate 10s infinite linear;
     border: transparent;
+    box-shadow: 0px 0px 50px white;
     
 
 }
@@ -91,6 +92,7 @@ p{
     padding: 10px;
     border: 2px solid transparent;
     justify-self: center;
+
 }
 #contolbox{
     -webkit-appearance: none;
