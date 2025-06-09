@@ -1,37 +1,52 @@
 const playButton = document.getElementById('playButton');
 const audio = document.getElementById('myAudio');
-const stopButton =document .getElementById('stopButton');
-const rewindButton=document.getElementById('rewindButton');
-const contolbox=document.getElementById('contolbox');
-const home=document.getElementById("headButton");
+const stopButton = document.getElementById('stopButton');
+const rewindButton = document.getElementById('rewindButton');
+const contolbox = document.getElementById('contolbox');
+const homeBtn = document.getElementById("homeBtn");
 
-home.addEventListener('click',()=>{
-      close();
-}
-)
+let isPlaying = false;
 
-
+// Toggle Play / Pause
 playButton.addEventListener('click', () => {
-    audio.play(); 
-    playButton.style = "visibility:hidden;"
-    stopButton.style = "visibility:inhert;"
-});
-stopButton.addEventListener('click',() =>{
-    audio.pause(); 
-    stopButton.style = "visibility:hidden;"
-    playButton.style = "visibility:inhert;"
-});
-rewindButton.addEventListener('click',()=>{
-    audio.currentTime=0
-    
+    if (isPlaying) {
+        audio.pause();
+        playButton.innerHTML = '<i class="ri-play-line"></i>';
+    } else {
+        audio.play();
+        playButton.innerHTML = '<i class="ri-pause-line"></i>';
+    }
+    isPlaying = !isPlaying;
 });
 
-audio.onloadedmetadata = function(){
-    contolbox.max =audio.duration;
+// Stop
+stopButton.addEventListener('click', () => {
+    audio.pause();
+    audio.currentTime = 0;
+    playButton.innerHTML = '<i class="ri-play-line"></i>';
+    isPlaying = false;
+});
+
+// Rewind
+rewindButton.addEventListener('click', () => {
+    audio.currentTime = 0;
+});
+
+// Seek bar
+audio.addEventListener('loadedmetadata', () => {
+    contolbox.max = audio.duration;
+});
+
+audio.addEventListener('timeupdate', () => {
     contolbox.value = audio.currentTime;
-}
-if(audio.play()){
-    setInterval(()=>{
-        contolbox.value = audio.currentTime;
-},500);
-}
+});
+
+contolbox.addEventListener('input', () => {
+    audio.currentTime = contolbox.value;
+});
+
+// Home Button - Just logs for now (you can link to another page or add feature)
+homeBtn.addEventListener('click', () => {
+    console.log("Home button clicked!");
+    alert("You can add home navigation here.");
+});
