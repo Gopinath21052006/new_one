@@ -1,0 +1,166 @@
+/* Global Reset & Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, rgb(71, 27, 27), black);
+    color: white;
+    height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    animation: bgshift 1s infinite alternate-reverse linear;
+}
+
+@keyframes bgshift {
+    0% { background: linear-gradient(to bottom right, rgb(71, 27, 27), black); }
+    10%{background: linear-gradient(to bottom right, rgb(64, 27, 38), black );}
+    20%{background: linear-gradient(to bottom right, rgb(57, 27, 49), black);}
+    40%{background: linear-gradient(to bottom right, rgb(50, 26, 60), black);}
+    50%{background: linear-gradient(to bottom right, rgb(0, 0, 0), black);}
+    60%{background: linear-gradient(to bottom right, black, rgb(36, 26, 82));}
+    80%{background: linear-gradient(to bottom right,    black, rgb(29, 25,93));}
+    90% { background: linear-gradient(to bottom right,  black, rgb(25, 25, 104)); }
+    100% { background: linear-gradient(to bottom right, black, rgb(25, 25, 112)); }
+}
+
+
+/* Header Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.icon-button:hover {
+    color: #1db954;
+    transform: scale(1.2);
+}
+
+/* Rotating Album Art with Border */
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+#center_image {
+    clip-path: circle(40%);
+    width :50vh;
+    height: 50vh;
+    object-fit: cover;
+    animation: rotate 10s infinite linear;
+    box-shadow: 0 0 30px #fff;
+    z-index: -1;
+    position: relative;
+}
+
+#p2 {
+    position: absolute;
+    padding: 55px;
+    top: 4vh;
+    border: 16px dotted rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rerotate 10s infinite linear;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@keyframes rerotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
+/* Titles */
+h1 {
+    color: #1db954;
+    font-size: 34px;
+    margin-top: 20px;
+}
+.subtext {
+    opacity: 0.8;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* Music Progress */
+#inputbox {
+    margin: 20px auto;
+    width: 80%;
+}
+#contolbox {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background: #ddd;
+    appearance: none;
+    outline: none;
+}
+#contolbox::-webkit-slider-thumb {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #1db954;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#contolbox::-webkit-slider-thumb:hover {
+    background-color: #16a34a;
+}
+
+/* Footer Controls */
+#foor {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.Button {
+    background: #1db954;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.4);
+    transition: 0.3s;
+}
+.Button:hover {
+    background: #16a34a;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    #center_image {
+        width: 200px;
+        height: 200px;
+    }
+    #p2 {
+        padding: 40px;
+        border-width: 10px;
+    }
+    .Button {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+}
